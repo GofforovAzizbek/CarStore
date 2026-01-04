@@ -1,0 +1,127 @@
+Konspek
+
+1. EXECUTION CONTEXT
+JavaScript kodi ishlayotgan muhit.
+
+Execution Context tarkibi:
+1) Variable Environment (var, function)
+2) Lexical Environment (let, const)
+3) this binding
+
+Har bir funksiya chaqirilganda yangi execution context yaratiladi.
+
+
+2. CALL STACK
+Funksiyalar chaqirilish tartibini saqlaydi.
+Oxirgi kirgan — birinchi chiqadi (LIFO).
+
+Stack to‘lib ketsa → Stack Overflow.
+
+
+3. HEAP
+Katta ma’lumotlar saqlanadi:
+- Object
+- Array
+- Function
+
+Stack faqat Heap’dagi manzilni (reference) saqlaydi.
+
+
+4. SCOPE (KO‘RINISH SOHASI)
+3 xil scope bor:
+1) Global scope
+2) Function scope
+3) Block scope (let, const)
+
+let va const block scope’da ishlaydi.
+
+
+5. LEXICAL ENVIRONMENT
+Funksiya qayerda YOZILGAN bo‘lsa, o‘sha joydagi o‘zgaruvchilarni ko‘radi.
+Chaqirilgan joy muhim emas.
+
+Bu — lexical scope deyiladi.
+
+
+6. CLOSURE
+Closure — funksiya tashqaridagi o‘zgaruvchini eslab qolishi.
+
+Misol:
+function outer() {
+  let x = 5;
+  return function inner() {
+    return x;
+  };
+}
+
+Closure sababli x yo‘qolmaydi.
+
+
+7. CLOSURE NIMA UCHUN KERAK?
+1) Private (yashirin) ma’lumot
+2) Holatni (state) saqlash
+3) Hisoblagichlar (counter)
+4) Limit qo‘yish
+5) Inkapsulyatsiya
+
+
+8. INKAPSULYATSIYA
+Ma’lumotni tashqaridan to‘g‘ridan-to‘g‘ri o‘zgartirib bo‘lmaydi.
+
+Misol:
+balance faqat metodlar orqali o‘zgaradi.
+
+
+9. HOISTING
+var:
+- Hoisting bor
+- qiymati undefined
+
+let / const:
+- Hoisting bor
+- TDZ sababli ishlatib bo‘lmaydi
+
+
+10. TDZ (TEMPORAL DEAD ZONE)
+let yoki const e’lon qilinishidan oldingi vaqt.
+Bu paytda o‘qish ham, yozish ham xato.
+
+
+11. STACK vs HEAP
+STACK:
+- Tez
+- Primitive
+- Execution Context
+
+HEAP:
+- Sekinroq
+- Object, Array
+- Dynamic data
+
+
+12. CURRYING
+Funksiya ichidan funksiya qaytarish.
+
+multiply(2)(3)(4) → 24
+
+Har bosqichda closure ishlaydi.
+
+
+13. REAL MISOLLAR
+- Counter
+- Password checker
+- Bank account
+- Timer
+- Generator
+- Prefix qo‘shish
+
+
+14. ENG QISQA TA’RIF
+Closure — funksiya tashqi scope’dagi o‘zgaruvchini eslab qolishi.
+
+
+15. XULOSA
+- JavaScript scope asosida ishlaydi
+- Funksiya lexical joyini unutmaydi
+- Closure — xotira + funksiya
+- Juda muhim interview mavzu
