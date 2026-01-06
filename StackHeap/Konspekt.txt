@@ -1,0 +1,275 @@
+1. STACK (Call Stack)
+Stack — bu xotiraning tez ishlaydigan qismi.
+Unda primitive turlar va funksiyalar chaqiruvi saqlanadi.
+
+Primitive turlar:
+- Number
+- String
+- Boolean
+- null
+- undefined
+- Symbol
+- BigInt
+
+Misol:
+let a = 10;
+let b = a;
+b = 20;
+
+Natija:
+a = 10
+b = 20
+
+Sabab:
+a ning qiymati nusxa bo‘lib stack’da saqlanadi.
+
+Function Stack misoli:
+function one() {
+  two();
+}
+
+function two() {
+  console.log("Hello");
+}
+
+one();
+
+Call Stack ketma-ketligi:
+one()
+two()
+console.log()
+
+2. HEAP
+Heap — murakkab obyektlar saqlanadigan xotira.
+Sekinroq, lekin katta hajmli.
+
+Reference turlar:
+- Object
+- Array
+- Function
+
+Misol:
+let obj1 = { name: "Ali" };
+let obj2 = obj1;
+
+obj2.name = "Vali";
+
+Natija:
+obj1.name = "Vali"
+obj2.name = "Vali"
+
+Sabab:
+Heap’da faqat manzil (reference) saqlanadi.
+
+3. STACK + HEAP BIRGA ISHLASHI
+let user = {
+  name: "Aziz",
+  age: 20
+};
+
+Stack:
+user -> heap’dagi obyekt manzili
+
+Heap:
+{ name: "Aziz", age: 20 }
+
+4. TAQQOSLASH JADVALI
+
+STACK:
+- Tez ### kak bi ssd dip tushundim
+- Kichik xotira
+- Primitive qiymatlar
+- Function call
+
+HEAP:
+- Sekinroq ### hhd
+- Katta xotira
+- Object, Array
+- Reference asosida ishlaydi
+
+5. MUHIM ESLATMA
+Primitive → copy by value
+Object / Array → copy by reference
+
+6. REAL MISOL
+function change(x, obj) {
+  x = 5;
+  obj.age = 30;
+}
+
+let num = 10;
+let person = { age: 20 };
+
+change(num, person);
+
+Natija:
+num = 10
+person.age = 30
+
+Sabab:
+num → stack (copy)
+person → heap (reference)
+
+Xulosa:
+Stack — tez va vaqtinchalik
+Heap — katta va reference asosida
+
+Yodlab olish uchun:
+Primitive = Stack
+Object = Heap
+
+
+Savlo Javob
+Beginner darajadagi savollar GITA php YII fremworki uchun dan chopilgan :)
+
+1. HTML nima?
+HTML — web sahifaning tuzilishini yaratish tili.
+
+2. HTML ochilishi nimadan boshlanadi?
+<!DOCTYPE html>
+
+3. <html> tegi nima qiladi?
+Butun sahifani o‘rab turadi.
+
+4. <head> ichida nima bo‘ladi?
+Meta, title, link, style.
+
+5. <body> nima?
+Ko‘rinadigan kontent joyi.
+
+6. <title> vazifasi?
+Brauzer tepasidagi nom.
+
+7. Block va inline element farqi?
+Block — yangi qatordan, inline — yonma-yon.
+
+8. Misol block element?
+<div>, <p>, <h1>
+
+9. Misol inline element?
+<span>, <a>, <img>
+
+10. <a> tegi nima qiladi?
+Havola yaratadi.
+
+11. <img> da muhim atributlar?
+src, alt
+
+12. <ul> va <ol> farqi?
+Tartibsiz / tartibli ro‘yxat.
+
+13. <input> nima?
+Ma’lumot kiritish maydoni.
+
+14. Semantic HTML nima?
+Mazmunli teglar (header, footer).
+
+15. Nima uchun semantic kerak?
+SEO va o‘qish oson bo‘lishi uchun.
+
+CSS 
+16. CSS nima?
+Dizayn va ko‘rinish uchun.
+
+17. CSS ulashish usullari?
+Inline, internal, external.
+
+18. color nima qiladi?
+Matn rangini o‘zgartiradi.
+
+19. background-color nima?
+Orqa fon rangi.
+
+20. Margin va padding farqi?
+Margin — tashqi, padding — ichki.
+
+21. display: none nima qiladi?
+Elementni yashiradi.
+
+22. display: block xususiyati?
+Butun qatordan joy oladi.
+
+23. Flex nima?
+Joylashuvni osonlashtiradi.
+
+24. justify-content nima?
+Gorizontal tekislash.
+
+25. align-items nima?
+Vertikal tekislash.
+
+26. position: relative nima?
+O‘z joyiga nisbatan.
+
+27. position: absolute nima?
+Eng yaqin relative ga bog‘lanadi.
+
+28. z-index nima?
+Qatlam ustunligi.
+
+29. Responsive dizayn nima?
+Har ekran uchun moslashuv.
+
+30. Media query nima?
+Ekranga qarab style berish.
+
+JavaScript
+31. JavaScript nima?
+Interaktivlik beruvchi til.
+
+32. JS qayerda yoziladi?
+HTML ichida yoki alohida faylda.
+
+33. var, let, const farqi?
+Scope va o‘zgaruvchanlik.
+
+34. const o‘zgartiriladimi?
+Yo‘q (qayta tayinlab bo‘lmaydi).
+
+35. Primitive turlar qaysilar?
+String, Number, Boolean, null, undefined.
+
+36. Array nima?
+Ro‘yxat (massiv).
+
+37. Object nima?
+Kalit-qiymat juftligi.
+
+38. Function nima?
+Qayta ishlatiladigan kod.
+
+39. Arrow function nima?
+Qisqa yozuv: ()=>{}
+
+40. if nima?
+Shart tekshirish.
+
+41. for loop nima?
+Takrorlash.
+
+42. map() nima qiladi?
+Yangi array qaytaradi.
+
+43. push() nima?
+Oxiriga qo‘shadi.
+
+44. pop() nima?
+Oxiridan o‘chiradi.
+
+45. length nima?
+Uzunlikni qaytaradi.
+
+46. === va == farqi?
+=== — qat’iy tenglik.
+
+47. DOM nima?
+HTML ni JS orqali boshqarish.
+
+48. document.querySelector() nima?
+Elementni tanlab beradi.
+
+49. Event nima?
+Bosish, yozish, hover.
+
+50. addEventListener() nima?
+Event qo‘shadi.
