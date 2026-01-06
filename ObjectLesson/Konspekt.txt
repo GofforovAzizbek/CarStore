@@ -1,0 +1,125 @@
+1. OBJECT (Obyekt)
+Object — kalit:qiymat juftliklaridan iborat ma’lumot turi.
+
+Yaratish:
+const obj = {};
+const obj2 = new Object();
+const obj3 = Object.create(proto);
+
+O‘qish/Yozish:
+obj.name
+obj["name"]
+obj.age = 25
+
+Asosiy metodlar:
+Object.keys(obj)
+Object.values(obj)
+Object.entries(obj)
+Object.assign()
+Object.freeze()
+Object.seal()
+obj.hasOwnProperty()
+"in" operatori
+
+Descriptor:
+Object.defineProperty(obj, "id", {
+  value: 1,
+  writable: false,
+  enumerable: false,
+  configurable: false
+});
+
+Prototype:
+Object.getPrototypeOf(obj)
+Object.setPrototypeOf(obj, proto)
+obj.__proto__
+
+
+2. ARRAY (Massiv)
+Array — tartiblangan ma’lumotlar to‘plami.
+
+const arr = [1, 2, 3];
+
+O‘zgartiruvchi metodlar:
+push, pop, shift, unshift, splice, sort, reverse
+
+O‘zgartirmaydigan metodlar:
+map, filter, reduce, find, some, every, includes, concat, slice
+
+ES6:
+const copy = [...arr];
+const [a, b] = arr;
+
+
+3. STRING (Matn)
+String — matnli ma’lumot turi.
+
+Yaratish:
+"Hello"
+'Hello'
+`Hello ${name}`
+
+Asosiy metodlar:
+length
+toUpperCase()
+toLowerCase()
+trim()
+includes()
+startsWith()
+endsWith()
+slice()
+substring()
+replace()
+split()
+
+Eslatma:
+String immutable (o‘zgarmaydi)
+
+
+4. FUNCTION (Funksiya)
+Function — qayta ishlatiladigan kod bloki.
+
+Yaratish:
+function test() {}
+const test = function() {}
+const test = () => {}
+
+Arrow function farqi:
+- this yo‘q
+- arguments yo‘q
+- new bilan ishlamaydi
+
+Default parametr:
+function sum(a = 0, b = 0) {}
+
+Callback:
+setTimeout(() => {}, 1000);
+
+Closure:
+function outer() {
+  let x = 1;
+  return function inner() {
+    console.log(x);
+  }
+}
+
+
+5. PROTOTYPE
+Prototype — obyektlar orasidagi vorislik mexanizmi.
+
+Prototype zanjiri:
+obj → prototype → Object.prototype → null
+
+Constructor + prototype:
+function User(name) {
+  this.name = name;
+}
+User.prototype.sayHi = function () {
+  console.log(this.name);
+};
+
+Object.create:
+const child = Object.create(parent);
+
+Shadowing:
+child.x = 10;
