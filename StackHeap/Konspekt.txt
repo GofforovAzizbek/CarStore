@@ -272,4 +272,4 @@ Elementni tanlab beradi.
 Bosish, yozish, hover.
 
 50. addEventListener() nima?
-Event qo‘shadi.
+Event qo‘shadi..
